@@ -1,0 +1,151 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Italic;
+\f3\fnil\fcharset0 Menlo-BoldItalic;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red0\green0\blue192;\red63\green95\blue191;
+\red106\green62\blue62;\red42\green0\blue255;}
+{\*\expandedcolortbl;;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c0\c0\c75294;\csgenericrgb\c24706\c37255\c74902;
+\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c16471\c0\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs24 \cf2 package
+\f1\b0 \cf0  MarkI;\
+\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  \ul java.awt.BorderLayout\ulnone ;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  java.awt.EventQueue;\
+\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JFrame;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JPanel;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.border.EmptyBorder;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JLabel;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JComboBox;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JButton;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.DefaultComboBoxModel;\
+\
+
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 class
+\f1\b0 \cf0  \ul inserimento\ulnone  
+\f0\b \cf2 extends
+\f1\b0 \cf0  JFrame \{\
+\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JPanel \cf3 contentPane\cf0 ;\
+\
+	\cf4 /**\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 	 * Launch the application.\cf0 \
+\cf4 	 */\cf0 \
+	
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 static
+\f1\b0 \cf0  
+\f0\b \cf2 void
+\f1\b0 \cf0  main(String[] \cf5 args\cf0 ) \{\
+		EventQueue.
+\f2\i invokeLater
+\f1\i0 (
+\f0\b \cf2 new
+\f1\b0 \cf0  Runnable() \{\
+			
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 void
+\f1\b0 \cf0  run() \{\
+				
+\f0\b \cf2 try
+\f1\b0 \cf0  \{\
+					inserimento \cf5 frame\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  inserimento();\
+					\cf5 frame\cf0 .setVisible(
+\f0\b \cf2 true
+\f1\b0 \cf0 );\
+				\} 
+\f0\b \cf2 catch
+\f1\b0 \cf0  (Exception \cf5 e\cf0 ) \{\
+					\cf5 e\cf0 .printStackTrace();\
+				\}\
+			\}\
+		\});\
+	\}\
+\
+	\cf4 /**\cf0 \
+\cf4 	 * Create the frame.\cf0 \
+\cf4 	 */\cf0 \
+	
+\f0\b \cf2 public
+\f1\b0 \cf0  inserimento() \{\
+		setDefaultCloseOperation(JFrame.
+\f3\i\b \cf3 EXIT_ON_CLOSE
+\f1\i0\b0 \cf0 );\
+		setBounds(100, 100, 450, 300);\
+		\cf3 contentPane\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JPanel();\
+		\cf3 contentPane\cf0 .setBorder(
+\f0\b \cf2 new
+\f1\b0 \cf0  EmptyBorder(5, 5, 5, 5));\
+		setContentPane(\cf3 contentPane\cf0 );\
+		\cf3 contentPane\cf0 .setLayout(
+\f0\b \cf2 null
+\f1\b0 \cf0 );\
+		\
+		JLabel \cf5 lblNewLabel\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "INSERIMENTO"\cf0 );\
+		\cf5 lblNewLabel\cf0 .setBounds(174, 6, 109, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel\cf0 );\
+		\
+		\ul JComboBox\ulnone  \cf5 comboBox\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  \ul JComboBox\ulnone ();\
+		\cf5 \ul \ulc5 comboBox\cf0 \ulc0 .setModel(
+\f0\b \cf2 \ulc2 new
+\f1\b0 \cf0 \ulc0  DefaultComboBoxModel(
+\f0\b \cf2 \ulc2 new
+\f1\b0 \cf0 \ulc0  String[] \{\cf6 \ulc6 "..."\cf0 \ulc0 , \cf6 \ulc6 "Utente"\cf0 \ulc0 , \cf6 \ulc6 "Traccia"\cf0 \ulc0 , \cf6 \ulc6 "Appartiene"\cf0 \ulc0 , \cf6 \ulc6 "Artista"\cf0 \ulc0 , \cf6 \ulc6 "Crea"\cf0 \ulc0 , \cf6 \ulc6 "Album"\cf0 \ulc0 \}))\ulnone ;\
+		\cf5 comboBox\cf0 .setBounds(251, 70, 160, 27);\
+		\cf3 contentPane\cf0 .add(\cf5 comboBox\cf0 );\
+		\
+		JLabel \cf5 lblNewLabel_1\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "Scegli la tabella"\cf0 );\
+		\cf5 lblNewLabel_1\cf0 .setBounds(55, 74, 109, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel_1\cf0 );\
+		\
+		JButton \cf5 btnNewButton\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JButton(\cf6 "indietro"\cf0 );\
+		\cf5 btnNewButton\cf0 .setBounds(180, 237, 117, 29);\
+		\cf3 contentPane\cf0 .add(\cf5 btnNewButton\cf0 );\
+		\
+		JButton \cf5 btnNewButton_1\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JButton(\cf6 "continua"\cf0 );\
+		\cf5 btnNewButton_1\cf0 .setBounds(309, 237, 117, 29);\
+		\cf3 contentPane\cf0 .add(\cf5 btnNewButton_1\cf0 );\
+	\}\
+\}}
