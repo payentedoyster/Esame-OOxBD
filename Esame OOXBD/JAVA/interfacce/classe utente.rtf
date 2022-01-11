@@ -1,0 +1,330 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Italic;
+\f3\fnil\fcharset0 Menlo-BoldItalic;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red0\green0\blue192;\red63\green95\blue191;
+\red106\green62\blue62;\red42\green0\blue255;\red63\green127\blue95;\red127\green159\blue191;}
+{\*\expandedcolortbl;;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c0\c0\c75294;\csgenericrgb\c24706\c37255\c74902;
+\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c49804\c62353\c74902;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs24 \cf2 package
+\f1\b0 \cf0  MarkI;\
+\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  \ul java.awt.BorderLayout\ulnone ;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  java.awt.EventQueue;\
+\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JFrame;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JPanel;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.border.EmptyBorder;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JLabel;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JTextField;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  javax.swing.JButton;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  java.awt.event.ActionListener;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  java.sql.Connection;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  java.sql.DriverManager;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  \ul java.sql.ResultSet\ulnone ;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  java.sql.SQLException;\
+
+\f0\b \cf2 import
+\f1\b0 \cf0  java.awt.event.ActionEvent;\
+\
+
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 class
+\f1\b0 \cf0  \ul Utente\ulnone  
+\f0\b \cf2 extends
+\f1\b0 \cf0  JFrame \{\
+\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JPanel \cf3 contentPane\cf0 ;\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JTextField \cf3 \ul \ulc3 textIdentify\cf0 \ulnone ;\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JTextField \cf3 \ul \ulc3 textEta\cf0 \ulnone ;\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JTextField \cf3 \ul \ulc3 textCitta\cf0 \ulnone ;\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JTextField \cf3 \ul \ulc3 textVia\cf0 \ulnone ;\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JTextField \cf3 \ul \ulc3 textNCivico\cf0 \ulnone ;\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JTextField \cf3 \ul \ulc3 textNazionalita\cf0 \ulnone ;\
+	
+\f0\b \cf2 private
+\f1\b0 \cf0  JTextField \cf3 \ul \ulc3 textEmail\cf0 \ulnone ;\
+\
+	\cf4 /**\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 	 * Launch the application.\cf0 \
+\cf4 	 */\cf0 \
+	
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 static
+\f1\b0 \cf0  
+\f0\b \cf2 void
+\f1\b0 \cf0  main(String[] \cf5 args\cf0 ) \{\
+		EventQueue.
+\f2\i invokeLater
+\f1\i0 (
+\f0\b \cf2 new
+\f1\b0 \cf0  Runnable() \{\
+			
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 void
+\f1\b0 \cf0  run() \{\
+				
+\f0\b \cf2 try
+\f1\b0 \cf0  \{\
+					Utente \cf5 frame\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  Utente();\
+					\cf5 frame\cf0 .setVisible(
+\f0\b \cf2 true
+\f1\b0 \cf0 );\
+				\} 
+\f0\b \cf2 catch
+\f1\b0 \cf0  (Exception \cf5 e\cf0 ) \{\
+					\cf5 e\cf0 .printStackTrace();\
+				\}\
+			\}\
+		\});\
+	\}\
+\
+	\cf4 /**\cf0 \
+\cf4 	 * Create the frame.\cf0 \
+\cf4 	 */\cf0 \
+	
+\f0\b \cf2 public
+\f1\b0 \cf0  Utente() \{\
+		setDefaultCloseOperation(JFrame.
+\f3\i\b \cf3 EXIT_ON_CLOSE
+\f1\i0\b0 \cf0 );\
+		setBounds(100, 100, 450, 300);\
+		\cf3 contentPane\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JPanel();\
+		\cf3 contentPane\cf0 .setBorder(
+\f0\b \cf2 new
+\f1\b0 \cf0  EmptyBorder(5, 5, 5, 5));\
+		setContentPane(\cf3 contentPane\cf0 );\
+		\cf3 contentPane\cf0 .setLayout(
+\f0\b \cf2 null
+\f1\b0 \cf0 );\
+		\
+		JLabel \cf5 lblNewLabel\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "Inserisci in Utente"\cf0 );\
+		\cf5 lblNewLabel\cf0 .setBounds(155, 6, 132, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel\cf0 );\
+		\
+		JLabel \cf5 lblNewLabel_1\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "Identify"\cf0 );\
+		\cf5 lblNewLabel_1\cf0 .setBounds(6, 38, 61, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel_1\cf0 );\
+		\
+		JLabel \cf5 lblNewLabel_2\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "Email"\cf0 );\
+		\cf5 lblNewLabel_2\cf0 .setBounds(6, 66, 61, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel_2\cf0 );\
+		\
+		JTextField \cf5 txtEmail\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JTextField();\
+		\cf5 txtEmail\cf0 .setText(\cf6 "Varchar(30)"\cf0 );\
+		\cf5 txtEmail\cf0 .setBounds(79, 61, 150, 26);\
+		\cf3 contentPane\cf0 .add(\cf5 txtEmail\cf0 );\
+		\cf5 txtEmail\cf0 .setColumns(10);\
+		\
+		JLabel \cf5 lblNewLabel_3\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "Et\'e0"\cf0 );\
+		\cf5 lblNewLabel_3\cf0 .setBounds(6, 94, 61, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel_3\cf0 );\
+		\
+		JLabel \cf5 lblNewLabel_4\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "Citt\'e0"\cf0 );\
+		\cf5 lblNewLabel_4\cf0 .setBounds(6, 122, 61, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel_4\cf0 );\
+		\
+		JLabel \cf5 lblNewLabel_5\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "Via"\cf0 );\
+		\cf5 lblNewLabel_5\cf0 .setBounds(6, 150, 61, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel_5\cf0 );\
+		\
+		JLabel \cf5 lblNewLabel_6\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "N_civico"\cf0 );\
+		\cf5 lblNewLabel_6\cf0 .setBounds(6, 178, 61, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel_6\cf0 );\
+		\
+		JLabel \cf5 lblNewLabel_7\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JLabel(\cf6 "Nazionalit\'e0"\cf0 );\
+		\cf5 lblNewLabel_7\cf0 .setBounds(241, 38, 74, 16);\
+		\cf3 contentPane\cf0 .add(\cf5 lblNewLabel_7\cf0 );\
+		\
+		JTextField \cf5 textIdentify\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JTextField();\
+		\cf5 textIdentify\cf0 .setText(\cf6 "Varchar(20)"\cf0 );\
+		\cf5 textIdentify\cf0 .setBounds(79, 34, 150, 26);\
+		\cf3 contentPane\cf0 .add(\cf5 textIdentify\cf0 );\
+		\cf5 textIdentify\cf0 .setColumns(10);\
+		\
+	\
+		\
+		\
+		\
+		JTextField \cf5 textEta\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JTextField();\
+		\cf5 textEta\cf0 .setText(\cf6 "Number"\cf0 );\
+		\cf5 textEta\cf0 .setBounds(79, 89, 150, 26);\
+		\cf3 contentPane\cf0 .add(\cf5 textEta\cf0 );\
+		\cf5 textEta\cf0 .setColumns(10);\
+		\
+		JTextField \cf5 textCitta\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JTextField();\
+		\cf5 textCitta\cf0 .setText(\cf6 "Varchar(20)"\cf0 );\
+		\cf5 textCitta\cf0 .setBounds(79, 117, 150, 26);\
+		\cf3 contentPane\cf0 .add(\cf5 textCitta\cf0 );\
+		\cf5 textCitta\cf0 .setColumns(10);\
+		\
+		JTextField \cf5 textVia\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JTextField();\
+		\cf5 textVia\cf0 .setText(\cf6 "Varchar(20)"\cf0 );\
+		\cf5 textVia\cf0 .setBounds(79, 145, 150, 26);\
+		\cf3 contentPane\cf0 .add(\cf5 textVia\cf0 );\
+		\cf5 textVia\cf0 .setColumns(10);\
+		\
+		JTextField \cf5 textNCivico\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JTextField();\
+		\cf5 textNCivico\cf0 .setText(\cf6 "Number"\cf0 );\
+		\cf5 textNCivico\cf0 .setBounds(79, 173, 150, 26);\
+		\cf3 contentPane\cf0 .add(\cf5 textNCivico\cf0 );\
+		\cf5 textNCivico\cf0 .setColumns(10);\
+		\
+		JTextField \cf5 textNazionalita\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JTextField();\
+		\cf5 textNazionalita\cf0 .setText(\cf6 "Varchar(20)"\cf0 );\
+		\cf5 textNazionalita\cf0 .setBounds(314, 33, 130, 26);\
+		\cf3 contentPane\cf0 .add(\cf5 textNazionalita\cf0 );\
+		\cf5 textNazionalita\cf0 .setColumns(10);\
+		\
+		JTextField \cf5 textEmail\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JTextField();\
+		\cf5 textEmail\cf0 .setText(\cf6 "Varchar(30)"\cf0 );\
+		\cf5 textEmail\cf0 .setToolTipText(\cf6 ""\cf0 );\
+		\cf5 textEmail\cf0 .setBounds(79, 61, 150, 26);\
+		\cf3 contentPane\cf0 .add(\cf5 textEmail\cf0 );\
+		\cf5 textEmail\cf0 .setColumns(10);\
+		\
+		JButton \cf5 btnNewButton\cf0  = 
+\f0\b \cf2 new
+\f1\b0 \cf0  JButton(\cf6 "New button"\cf0 );\
+		\cf5 btnNewButton\cf0 .addActionListener(
+\f0\b \cf2 new
+\f1\b0 \cf0  ActionListener() \{\
+			
+\f0\b \cf2 public
+\f1\b0 \cf0  
+\f0\b \cf2 void
+\f1\b0 \cf0  actionPerformed(ActionEvent \cf5 e\cf0 ) \{\
+				\
+				String \cf5 user\cf0 =
+\f0\b \cf2 null
+\f1\b0 \cf0 ;\
+				String \cf5 psw\cf0 =
+\f0\b \cf2 null
+\f1\b0 \cf0 ;\
+				String \cf5 url\cf0 =
+\f0\b \cf2 null
+\f1\b0 \cf0 ;\
+				\
+				OracleConnection \cf5 oc\cf0 =
+\f0\b \cf2 new
+\f1\b0 \cf0  OracleConnection();\
+				\cf5 oc\cf0 .estrai_driver(\cf5 url\cf0 , \cf5 user\cf0 , \cf5 psw\cf0 );\
+				
+\f0\b \cf2 try
+\f1\b0 \cf0 \{Connection \cf5 con\cf0 =DriverManager.
+\f2\i getConnection
+\f1\i0 (  \cf6 "jdbc:oracle:thin:@localhost:1521:orclcdb"\cf0 ,\cf6 "system"\cf0 ,\cf6 "oracle"\cf0 );  \
+				System.
+\f3\i\b \cf3 out
+\f1\i0\b0 \cf0 .println(\cf6 "CONNECTION STATUS = OK"\cf0 ); \
+				java.sql.Statement \cf5 stm\cf0 =\cf5 con\cf0 .createStatement();\
+				
+\f0\b \cf2 int
+\f1\b0 \cf0  \cf5 i\cf0 =\cf5 stm\cf0 .executeUpdate(\cf6 "insert into utente values('"\cf0 + \cf5 textIdentify\cf0 .getText() +\cf6 "','"\cf0 + \cf5 txtEmail\cf0 .getText() +\cf6 "',"\cf0 + \cf5 textEta\cf0 .getText() +\cf6 ",'"\cf0 + \cf5 textCitta\cf0 .getText() +\cf6 "','"\cf0 + \cf5 textVia\cf0 .getText() +\cf6 "',"\cf0 + \cf5 textNCivico\cf0 .getText() +\cf6 ",'"\cf0 + \cf5 textNazionalita\cf0 .getText() +\cf6 "')"\cf0 );\
+				System.
+\f3\i\b \cf3 out
+\f1\i0\b0 \cf0 .println(\cf5 i\cf0 );\}\
+				
+\f0\b \cf2 catch
+\f1\b0 \cf0  (SQLException \cf5 e1\cf0 ) \{\
+					\cf7 // 
+\f0\b \cf8 TODO
+\f1\b0 \cf7  Auto-generated catch block\cf0 \
+					System.
+\f3\i\b \cf3 out
+\f1\i0\b0 \cf0 .println(\cf6 "CONNECTION STATUT = FAILURE"\cf0 );\
+					System.
+\f3\i\b \cf3 out
+\f1\i0\b0 \cf0 .println(\cf5 e1\cf0 );\
+				\}\
+				\
+				\
+			\}\
+		\});\
+		\cf5 btnNewButton\cf0 .setBounds(327, 237, 117, 29);\
+		\cf3 contentPane\cf0 .add(\cf5 btnNewButton\cf0 );\
+	\}\
+\}}
